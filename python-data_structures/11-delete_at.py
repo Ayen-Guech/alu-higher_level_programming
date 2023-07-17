@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-def divisible_by_2(my_list=[]):
-  new_list = []
-  for element in my_list:
-    if element % 2 == 0:
-      new_list.append(True)
-    else:
-      new_list.append(False)
-  return new_list
+# 11-delete_at.py
+
+
+def delete_at(my_list=[], idx=0):
+    """Delete an item at a specific position in a list."""
+    if idx >= 0 and idx < len(my_list):
+        del my_list[idx]
+    return (my_list)
 
