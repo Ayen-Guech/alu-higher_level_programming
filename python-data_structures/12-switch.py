@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-a = 10
-b = 20
-# 4. Switch value of a and b
-temp = a
-a = b
-b = temp
-print(a, b)
+a = 89
+b = 10
+a, b = b, a
+print("a={:d} - b={:d}".format(a, b))
 
