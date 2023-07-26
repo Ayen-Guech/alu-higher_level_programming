@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""define a  class square."""
+"""create an Empty Square."""
 
 
 class square:
-    """represent sa quare."""
+    ""create an Square."""
     pass
