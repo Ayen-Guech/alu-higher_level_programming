@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 1-square
+# 1-square.py 
 # ayenathiak@gmail.com
 """Define a class Square."""
 
