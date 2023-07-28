@@ -1,19 +1,25 @@
 #!/usr/bin/python3
-"""
-A module to prints a list in ascending order
-"""
+"""Defines a base geometry class BaseGeometry."""
 
 
-class MyList(list):
-    """
-    A class to customize the list class
-    """
+class BaseGeometry:
+    """Reprsent base geometry."""
 
-    def print_sorted(self):
+    def area(self):
+        """Not yet implemented."""
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """Validate a parameter as an integer.
+
+        Args:
+            name (str): The name of the parameter.
+            value (int): The parameter to validate.
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
         """
-        Prints a list in ascending order
-        Sort a list and then prints on the output
-        """
-
-        if issubclass(MyList, list):
-            print(sorted(self))
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
