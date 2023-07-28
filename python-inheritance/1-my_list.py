@@ -1,18 +1,10 @@
 #!/usr/bin/python3
-"""defines class BaseGeometry
-with public instance methods for area and ineger validation"""
+"""define class MyList"""
 
 
-class BaseGeometry:
-    """class with public instance method to raise exception
-    and public instance method to validate integer"""
-    def area(self):
-        """raises exception that area method is not implemented"""
-        raise Exception("area() is not implemented")
+class MyList(list):
+    """class that inherits from list
+    with public instance method to print sorted list"""
 
-    def integer_validator(self, name, value):
-        """validates integer"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+    def print_sorted(self):
+        print(sorted(self))
