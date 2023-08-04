@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Python script that takes in a URL and an email address."""
+"""Python URL Script"""
 import requests
 import sys
 
 if __name__ == '__main__':
     url = sys.argv[1]
-    value = sys.argv[2]
-    response = requests.post(url, data={"email": value})
-    print("{}".format(response.text))
+    response = requests.get(url)
+    print("{}".format(response.headers.get("X-Request-Id")))
