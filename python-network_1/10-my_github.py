@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""Python script that takes in a letter and sends a
-POST request to http://0.0.0.0:5000/search_user
-with the letter as a parameter.
-"""
-import sys
+""" Python script that uses the GitHub API to display your id"""
 import requests
+import requests.auth
+import sys
 
-
-if __name__ == "__main__":
-    letter = "" if len(sys.argv) == 1 else sys.argv[1]
-    payload = {"q": letter}
-
-    m = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+if __name__ == '__main__':
+    username = sys.argv[1]
+    password = sys.argv[2]
+    response = requests.get(
+        url="https://api.github.com/user",
+        auth=(requests.auth.HTTPBasicAuth(
+            username,
+            password
+        )))
     try:
-        response = m.json()
-        if response == {}:
-            print("No result")
-        else:
-            print("[{}] {}".format(response.get("id"), response.get("name")))
-    except ValueError:
-        print("Not a valid JSON")
+        json_response = response.json()
+        print("{}".format(json_response["id"]))
+    except:
+        print(None)
