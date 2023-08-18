@@ -32,6 +32,25 @@ class TestBase_instantiation(unittest.TestCase):
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
 
+    def test_rectangle_value(self):
+        """
+        doc
+        """
+        self.assertRaises(TypeError, Rectangle, 1, "2")
+        self.assertRaises(ValueError, Rectangle, 1, 0)
+
+    def test_normal_values(self):
+        """
+        doc
+        """
+        r = Rectangle(1, 2)
+        r1 = Rectangle(1, 2, 3)
+        r2 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r2.y, 4)
+
     def test_None_id(self):
         b1 = Base(None)
         b2 = Base(None)
